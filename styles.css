@@ -722,9 +722,9 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px; /* Set width to keep it consistent */
+    width: 300px; /* Set width to keep it consistent */
     margin-right: 20px; /* Add margin between contact info and form */
-    height: 620px; /* Match the height of the video */
+    height: 600px; /* Match the height of the video */
 }
 
 .contact-info h2 {
