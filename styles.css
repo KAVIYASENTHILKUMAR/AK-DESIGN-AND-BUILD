@@ -131,12 +131,16 @@ ul li a:hover, ul li.active a {
 .title h1 {
     color: burlywood;
     font-size: 50px;
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0; /* Removes any default margin */
 }
 
 .title h3 {
     color: burlywood;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0;
 }
 
 .fade-zoom-heading {
@@ -145,6 +149,21 @@ ul li a:hover, ul li.active a {
     opacity: 0;
     transform: scale(0.5);
     animation: fadeZoom 2s ease-out forwards;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .title h1 {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+
+    .title h3 {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+    .fade-zoom-heading {
+        font-size: 2em; /* Smaller zoom heading for mobile */
+    }
 }
 
 @keyframes fadeZoom {
