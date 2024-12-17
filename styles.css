@@ -136,25 +136,25 @@ ul li a:hover, ul li.active a {
 
 .title h1 {
     font-size: 50px; /* Default size for large screens */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .title h3 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px; /* Default size for large screens */
-     margin-top: 20px;
+     margin-top: 30px;
 }
 
 /* Responsive Design for Smaller Screens */
 @media screen and (max-width: 768px) {
     .title h1 {
         font-size: 30px; /* Adjust size for mobile to keep it in one line */
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
 
     .title h3 {
         font-size: 14px; /* Adjust size for mobile to fit in one line */
-        margin-top: 15px;
+        margin-top: 25px;
     }
 }
 
