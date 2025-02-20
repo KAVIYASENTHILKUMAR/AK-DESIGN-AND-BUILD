@@ -710,7 +710,7 @@ h1 {
 /* Image Styling */
 .testimonial-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -758,6 +758,29 @@ h1 {
     object-position: bottom;
     border-radius: 10px;
     margin-right: 20px; /* Add space between video and contact details */
+}
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .contact-image video {
+        width: 160px; /* Slightly reduce width */
+        height: 350px; /* Adjust height */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-image video {
+        width: 140px; /* Reduce width for tablets */
+        height: 300px; /* Reduce height for better fit */
+        margin-right: 10px; /* Reduce space to fit smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-image video {
+        width: 100px; /* Reduce width for mobile */
+        height: 250px; /* Reduce height */
+        margin-right: 5px; /* Reduce margin for tight spaces */
+    }
 }
 
 .contact-details {
