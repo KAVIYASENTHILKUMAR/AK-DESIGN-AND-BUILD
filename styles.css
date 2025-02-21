@@ -21,56 +21,42 @@ header {
 /* Navigation */
 nav {
     width: 100%;
-    padding: 20px 50px;
+    padding: 15px 30px;
     display: flex;
-    justify-content: space-between; /* Keeps logo on the left & menu on the right */
+    justify-content: space-between; /* Logo on left, Menu on right */
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Optional: Background for visibility */
+    z-index: 1000;
 }
 
-/* Default Logo */
+/* Logo */
 .logo img {
-    width: 150px;
+    width: 140px; /* Adjusted */
     height: auto;
     animation: pulseBounce 3s infinite ease-in-out;
 }
 
-/* Hover Effect */
-.logo img:hover {
-    animation: pulseBounce 1.5s infinite ease-in-out;
-}
-
-/* Keyframes for Animation */
-@keyframes pulseBounce {
-    0%, 100% {
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(1.05) translateY(-10px);
-    }
-}
-
-/* Adjust Logo for Screens 768px and Below */
+/* Remove animation for mobile */
 @media (max-width: 768px) {
     .logo img {
-        width: 120px; /* Reduce size */
-        animation: none; /* Remove animation for smaller screens */
+        width: 110px;
+        animation: none;
     }
 }
 
 /* Navigation Links */
-/* Aligns menu to the right */
 .nav-menu {
     display: flex;
     list-style: none;
-    margin-left: auto; /* Moves the menu to the right */
+    margin-left: auto;
     padding: 0;
 }
 
 .nav-menu li {
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .nav-menu li a {
@@ -99,6 +85,9 @@ nav {
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 
     .nav-menu {
@@ -107,10 +96,11 @@ nav {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #333;
+        background: #222; /* Dark background for better visibility */
         width: 100%;
         text-align: center;
         z-index: 1000;
+        border-radius: 5px;
     }
 
     .nav-menu.show {
@@ -118,14 +108,19 @@ nav {
     }
 
     .nav-menu li {
-        padding: 15px;
+        padding: 12px;
         border-bottom: 1px solid #555;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
     }
 
     .nav-menu li a {
         color: white;
     }
 }
+
 /* Main Content */
 .main {
     max-width: 1200px;
