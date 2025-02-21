@@ -18,74 +18,89 @@ header {
 }
 
 
-/* General Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.9); /* Dark background */
-    position: fixed;
+/* Navigation */
+nav {
     width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between; /* Keeps logo on the left & menu on the right */
+    align-items: center;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
 }
 
 /* Logo */
-.logo {
-    max-height: 80px; /* Adjust size */
-    margin-left: 20px; /* Space from left */
+.logo img {
+    width: 150px;
+    height: auto;
+    animation: pulseBounce 3s infinite ease-in-out;
 }
 
-/* Navigation Menu */
+.logo img:hover {
+    animation: pulseBounce 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseBounce {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-10px);
+    }
+}
+
+/* Navigation Links */
+/* Aligns menu to the right */
 .nav-menu {
     display: flex;
     list-style: none;
-    margin-right: 20px;
+    margin-left: auto; /* Moves the menu to the right */
+    padding: 0;
 }
 
 .nav-menu li {
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
-.nav-menu a {
-    color: white;
-    font-size: 16px;
+.nav-menu li a {
     text-decoration: none;
-    transition: 0.3s;
+    color: aliceblue;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
 }
 
-.nav-menu a:hover {
-    color: #FFD700; /* Highlight on hover */
+.nav-menu li a:hover, .nav-menu li.active a {
+    background-color: beige;
+    color: black;
+    border-radius: 5px;
 }
 
-/* 🖥️ Laptop View (Fix Logo Overlapping) */
-@media (min-width: 1024px) {
-    .logo {
-        position: absolute;
-        left: 20px;
-        top: 10px;
+/* Mobile Navigation */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
     }
 
-    .nav-menu {
-        margin-left: auto;
-        margin-right: 50px; /* Space from the right */
-    }
-}
-
-/* 📱 Mobile View (Hamburger Menu) */
-@media (max-width: 1023px) {
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Adjust based on navbar height */
+        top: 60px;
         right: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: #333;
         width: 100%;
         text-align: center;
-        padding: 10px 0;
+        z-index: 1000;
     }
 
     .nav-menu.show {
@@ -93,25 +108,14 @@ header {
     }
 
     .nav-menu li {
-        margin: 10px 0;
+        padding: 15px;
+        border-bottom: 1px solid #555;
     }
 
-    .menu-icon {
-        display: block;
-        font-size: 24px;
+    .nav-menu li a {
         color: white;
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-    }
-
-    .logo {
-        max-height: 40px; /* Reduce logo size on mobile */
     }
 }
-
-
 /* Main Content */
 .main {
     max-width: 1200px;
