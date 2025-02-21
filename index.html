@@ -26,11 +26,19 @@
             </ul>
         </div>
         <script>
-            // JavaScript to toggle menu visibility
-            function toggleMenu() {
-                const navMenu = document.querySelector(".nav-menu");
-                navMenu.classList.toggle("show"); // Adds or removes the "show" class
-            }
+           // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the menu icon and navigation menu
+    const menuIcon = document.querySelector(".menu-icon");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // Check if menu icon exists before adding event listener
+    if (menuIcon) {
+        menuIcon.addEventListener("click", function () {
+            navMenu.classList.toggle("show"); // Toggle the menu visibility
+        });
+    }
+});
         </script>
         
         <div class="title" id="header-section">
