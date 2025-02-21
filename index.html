@@ -26,17 +26,11 @@
             </ul>
         </div>
         <script>
-          document.addEventListener("DOMContentLoaded", function () {
-    const menuIcon = document.querySelector(".menu-icon");
-    const navMenu = document.querySelector(".nav-menu");
-
-    if (menuIcon && navMenu) {
-        menuIcon.addEventListener("click", function () {
-            navMenu.classList.toggle("show");
-        });
-    }
-});
-
+         // JavaScript to toggle menu visibility
+            function toggleMenu() {
+                const navMenu = document.querySelector(".nav-menu");
+                navMenu.classList.toggle("show"); // Adds or removes the "show" class
+            }
         </script>
         
         <div class="title" id="header-section">
