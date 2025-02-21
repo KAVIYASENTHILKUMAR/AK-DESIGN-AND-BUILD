@@ -26,19 +26,17 @@
             </ul>
         </div>
         <script>
-           // Wait for the DOM to load
-document.addEventListener("DOMContentLoaded", function () {
-    // Select the menu icon and navigation menu
+          document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.querySelector(".menu-icon");
     const navMenu = document.querySelector(".nav-menu");
 
-    // Check if menu icon exists before adding event listener
-    if (menuIcon) {
+    if (menuIcon && navMenu) {
         menuIcon.addEventListener("click", function () {
-            navMenu.classList.toggle("show"); // Toggle the menu visibility
+            navMenu.classList.toggle("show");
         });
     }
 });
+
         </script>
         
         <div class="title" id="header-section">
