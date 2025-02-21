@@ -83,6 +83,10 @@ nav {
     font-size: 30px;
     color: white;
     cursor: pointer;
+    position: absolute;
+    right: 20px;  /* Moves it to the right */
+    top: 15px;    /* Adjusts vertical position */
+}
 }
 
 /* Responsive Styles */
