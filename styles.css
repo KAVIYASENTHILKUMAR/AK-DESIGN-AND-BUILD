@@ -18,89 +18,74 @@ header {
 }
 
 
-/* Navigation */
-nav {
-    width: 100%;
-    padding: 15px 30px;
+/* General Styling */
+.navbar {
     display: flex;
-    justify-content: space-between; /* Logo on left, Menu on right */
+    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.9); /* Dark background */
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8); /* Optional: Background for visibility */
     z-index: 1000;
 }
 
 /* Logo */
-.logo img {
-    width: 140px; /* Adjusted */
-    height: auto;
-    animation: pulseBounce 3s infinite ease-in-out;
+.logo {
+    max-height: 50px; /* Adjust size */
+    margin-left: 20px; /* Space from left */
 }
 
-/* Remove animation for mobile */
-@media (max-width: 768px) {
-    .logo img {
-        width: 110px;
-        animation: none;
-    }
-}
-
-/* Navigation Links */
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     list-style: none;
-    margin-left: auto;
-    padding: 0;
+    margin-right: 20px;
 }
 
 .nav-menu li {
-    margin-left: 15px;
+    margin: 0 15px;
 }
 
-.nav-menu li a {
-    text-decoration: none;
-    color: aliceblue;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    transition: 0.3s ease-in-out;
-}
-
-.nav-menu li a:hover, .nav-menu li.active a {
-    background-color: beige;
-    color: black;
-    border-radius: 5px;
-}
-
-/* Mobile Navigation */
-.menu-icon {
-    display: none;
-    font-size: 30px;
+.nav-menu a {
     color: white;
-    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
+.nav-menu a:hover {
+    color: #FFD700; /* Highlight on hover */
+}
+
+/* 🖥️ Laptop View (Fix Logo Overlapping) */
+@media (min-width: 1024px) {
+    .logo {
         position: absolute;
-        top: 15px;
-        right: 20px;
+        left: 20px;
+        top: 10px;
     }
 
+    .nav-menu {
+        margin-left: auto;
+        margin-right: 50px; /* Space from the right */
+    }
+}
+
+/* 📱 Mobile View (Hamburger Menu) */
+@media (max-width: 1023px) {
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust based on navbar height */
         right: 0;
-        background: #222; /* Dark background for better visibility */
+        background: rgba(0, 0, 0, 0.9);
         width: 100%;
         text-align: center;
-        z-index: 1000;
-        border-radius: 5px;
+        padding: 10px 0;
     }
 
     .nav-menu.show {
@@ -108,18 +93,24 @@ nav {
     }
 
     .nav-menu li {
-        padding: 12px;
-        border-bottom: 1px solid #555;
+        margin: 10px 0;
     }
 
-    .nav-menu li:last-child {
-        border-bottom: none;
-    }
-
-    .nav-menu li a {
+    .menu-icon {
+        display: block;
+        font-size: 24px;
         color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .logo {
+        max-height: 40px; /* Reduce logo size on mobile */
     }
 }
+
 
 /* Main Content */
 .main {
