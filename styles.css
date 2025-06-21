@@ -298,7 +298,7 @@ body {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 20 px;
     justify-items: center;
     align-items: center;
 }
@@ -310,7 +310,7 @@ body {
     box-shadow: 0 0 1rem burlywood;
     overflow: hidden;
     width: 100%;
-    max-width: 300px;
+    max-width: 1200px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
