@@ -740,7 +740,7 @@ h1 {
     }
 }
 
-/* Contact Content */
+/* Contact Section */
 .contact-section {
     padding: 20px;
     background-color: white;
@@ -748,86 +748,36 @@ h1 {
 
 .contact-content {
     display: flex;
-    align-items: flex-start; /* Align items at the start */
+    flex-wrap: wrap;
+    align-items: stretch; /* Make items same height */
+    gap: 20px;
 }
 
+/* Video Container */
 .contact-image {
-    flex: 0 0 auto; /* Prevent the image from shrinking */
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: stretch;
 }
 
 .contact-image video {
-    width: 180px;
-    height: 400px; /* Set the height as needed */
-    object-fit: cover; /* Ensures the video covers the set height while maintaining its aspect ratio */
-    object-position: bottom;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
-    margin-right: 20px; /* Add space between video and contact details */
-}
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .contact-image video {
-        width: 160px; /* Slightly reduce width */
-        height: 350px; /* Adjust height */
-    }
 }
 
-@media (max-width: 768px) {
-    .contact-image video {
-        width: 140px; /* Reduce width for tablets */
-        height: 300px; /* Reduce height for better fit */
-        margin-right: 10px; /* Reduce space to fit smaller screens */
-    }
-}
-
-@media (max-width: 500px) {
-    .contact-image video {
-        width: 100px; /* Reduce width for mobile */
-        height: 250px; /* Reduce height */
-        margin-right: 5px; /* Reduce margin for tight spaces */
-    }
-}
-
-.contact-details {
-    display: flex; /* Change to flex to align contact info and form */
-    flex-direction: row; /* Arrange contact info and form side by side */
-    flex: 1; /* Allow this to take remaining space */
-}
-
-.contact-info {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Set width to keep it consistent */
-    margin-right: 20px; /* Add margin between contact info and form */
-    height: 600px; /* Match the height of the video */
-}
-
-.contact-info h2 {
-    margin-top: 0;
-    font-size: 30px; /* Adjust the size of the heading */
-}
-
-.contact-info p {
-    text-align: justify;
-    font-size: 20px; /* Adjust the size of the paragraph text */
-    line-height: 1.5; /* Improve readability */
-    margin: 30px 0; /* Add vertical spacing between paragraphs */
-}
-
-.contact-info strong {
-    font-weight: bold;
-    font-size: 25px; /* Adjust the size of strong text */
-}
-
+/* Form Section */
 .contact-form-section {
-    height: 600px; /* Matches the contact-info height */
-    overflow-y: auto; /* Adds scroll if content exceeds */
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    flex: 1; /* Allow the form section to take remaining space */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form-section h2 {
@@ -859,7 +809,7 @@ h1 {
 
 .form-group button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #0066cc;
     color: #fff;
     font-size: 18px;
@@ -870,6 +820,23 @@ h1 {
 
 .form-group button:hover {
     background-color: #005bb5;
+}
+
+/* Optional Responsive: Stack video and form on small screens */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-image,
+    .contact-form-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-image video {
+        height: 250px;
+    }
 }
 
 
