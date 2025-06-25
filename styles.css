@@ -675,62 +675,73 @@ h1 {
     }
 }
 
-/* Testimonial styles */
+/* Testimonial Section */
 .client-testimonial {
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    background-color: #fefefe;
 }
 
 .client-testimonial h1 {
-    font-size: 2em;
-    color: #444;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #222;
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
 /* Grid Layout for Testimonials */
 .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    gap: 20px;
-    max-width: 1000px;
-    margin: auto;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Individual Testimonial Box */
 .testimonial-box {
     background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 25px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .testimonial-box:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 /* Image Styling */
 .testimonial-image {
     width: 100%;
-    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    margin: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-/* Responsive Adjustments */
+.testimonial-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
     .testimonial-container {
-        grid-template-columns: repeat(3, 1fr); /* Still 3 images in a row */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .testimonial-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row for tablets */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .client-testimonial h1 {
+        font-size: 2em;
     }
 }
 
