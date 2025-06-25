@@ -746,10 +746,11 @@ h1 {
     background-color: white;
 }
 
+/* Contact Content Layout */
 .contact-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch; /* Make items same height */
+    align-items: stretch; /* Ensure equal height */
     gap: 20px;
 }
 
@@ -759,6 +760,7 @@ h1 {
     min-width: 300px;
     display: flex;
     align-items: stretch;
+    align-self: stretch; /* Ensure it stretches to match form height */
 }
 
 .contact-image video {
@@ -778,6 +780,7 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Match height with video */
 }
 
 .contact-form-section h2 {
@@ -822,7 +825,7 @@ h1 {
     background-color: #005bb5;
 }
 
-/* Optional Responsive: Stack video and form on small screens */
+/* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
     .contact-content {
         flex-direction: column;
@@ -835,10 +838,9 @@ h1 {
     }
 
     .contact-image video {
-        height: 250px;
+        height: 250px; /* Reduce height for mobile */
     }
 }
-
 
 
 footer {
